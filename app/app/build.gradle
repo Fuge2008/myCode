@@ -1,0 +1,117 @@
+apply plugin: 'com.android.application'
+apply plugin: 'android-apt'
+
+android {
+
+    compileSdkVersion 25
+    buildToolsVersion "25.0.0"
+    defaultConfig {
+        applicationId "com.saas.saasuser"
+        minSdkVersion 18
+        targetSdkVersion 22
+        multiDexEnabled true
+        versionCode 5
+        versionName "2.1.1"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+//    splits {
+//        abi {
+//            enable true
+//            reset()
+//            include 'x86', 'armeabi-v7a'
+//            universalApk true
+//        }
+//    }
+
+
+    lintOptions {
+        abortOnError true
+        checkReleaseBuilds false
+        // 防止在发布的时候出现因MissingTranslation导致Build Failed!
+        disable 'MissingTranslation'
+    }
+    buildTypes {
+        debug {
+            // 显示Log
+            buildConfigField "boolean", "LOG_DEBUG", "true"
+            versionNameSuffix "-debug"
+            minifyEnabled false
+            zipAlignEnabled false
+            shrinkResources false
+            signingConfig signingConfigs.debug
+        }
+        release {
+            // 不显示Log
+            buildConfigField "boolean", "LOG_DEBUG", "false"
+            //混淆
+            minifyEnabled false
+            //Zipalign优化
+            zipAlignEnabled false
+            // 移除无用的  resource 文件
+            shrinkResources false
+            //前一部分代表系统默认的 android 程序的混淆文件，
+            //该文件已经包含了基本的混淆声明，后一个文件是自己的定义混淆文件
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+
+    }
+    useLibrary 'org.apache.http.legacy'
+    defaultConfig {
+        ndk {
+            //设置支持的SO库架构（开发者可以根据需要，选择一个或多个平台的so）
+            abiFilters "armeabi"
+        }
+    }
+}
+
+
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    //compile "com.android.support:cardview-v7:${rootProject.ext.SUPPORT_LIB_VERSION}"
+
+    //compile "com.android.support:appcompat-v7:${rootProject.ext.SUPPORT_LIB_VERSION}"
+    compile project(':library')
+    compile 'com.tramsun.libs:prefcompat:0.7'
+    compile 'com.android.support:cardview-v7:21.0.2'
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'com.jakewharton:butterknife:8.0.1'
+    compile 'com.squareup.okio:okio:1.5.0'
+    compile 'com.squareup.okhttp:okhttp:2.4.0'
+    compile 'com.alibaba:fastjson:1.2.15'
+    compile 'com.android.support:design:24.2.1'
+    compile 'com.android.support:support-v4:25.3.1'
+    apt 'com.jakewharton:butterknife-compiler:8.0.1'
+    compile 'com.gyf.barlibrary:barlibrary:2.2.2'
+    compile 'com.apkfuns.logutils:library:1.5.1.1'
+    compile project(path: ':mypicker')
+    compile 'de.greenrobot:eventbus:3.0.0-beta1'
+    compile 'com.zhy:okhttputils:2.6.2'
+    compile 'liji.library.dev:citypickerview:2.0.1'
+    //compile 'com.facebook.fresco:fresco:0.12.0'
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+
+    //    compile 'cn.yipianfengye.android:ad-library:1.0'
+    compile 'com.gyf.barlibrary:barlibrary:2.2.2'
+    compile 'com.caojianshuilu:tlbanner:1.0.0'
+    compile 'cn.yipianfengye.android:ad-library:1.0'
+    compile 'com.android.support:multidex:1.0.1'
+    compile files('libs/AMap3DMap_5.3.0_AMapNavi_5.3.0_AMapSearch_5.3.1_AMapLocation_3.5.0_20170817.jar')
+    compile files('libs/Msc.jar')
+    compile files('libs/dom4j-1.6.1.jar')
+    compile files('jpush-android-3.1.0.jar')
+    compile files('jcore-android-1.1.8.jar')
+}

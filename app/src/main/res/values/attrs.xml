@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 动态汽车-->
+    <declare-styleable name="CarAnim">
+        <attr name="imageSrc" format="reference" />
+        <attr name="direction"/>
+        <attr name="duration" format="integer" />
+        <attr name="scaleType"/>
+    </declare-styleable>
+
+
+    <attr name="direction">
+        <enum name="up" value="0" />
+        <enum name="right" value="1" />
+        <enum name="down" value="2" />
+        <enum name="left" value="3" />
+    </attr>
+
+    <attr name="scaleType">
+        <enum name = "matrix" value="0"/>
+        <enum name = "fitXy" value="1"/>
+        <enum name = "fitStart" value="2"/>
+        <enum name = "fitCenter" value="3"/>
+        <enum name = "fitEnd" value="4"/>
+        <enum name = "center" value="5"/>
+        <enum name = "centerCrop" value="6"/>
+        <enum name = "centerInside" value="7"/>
+    </attr>
+    <!-- 折叠订单-->
+    <declare-styleable name="FoldingCell">
+        <attr name="backSideColor" format="color" />
+        <attr name="animationDuration" format="integer" />
+        <attr name="additionalFlipsCount" format="integer" />
+        <attr name="cameraHeight" format="integer" />
+    </declare-styleable>
+
+    <!-- ViewPagerIndicator-->
+    <declare-styleable name = "ViewPagerIndicator">
+        <attr name = "itemSize" format = "dimension"/>
+        <attr name = "delimiterSize" format = "dimension"/>
+    </declare-styleable>
+
+
+    <!-- CardStackLayout-->
+    <declare-styleable name="CardStackLayout">
+        <attr name="parallax_enabled" format="boolean" />
+        <attr name="parallax_scale" format="integer" />
+        <attr name="card_gap" format="dimension" />
+        <attr name="card_gap_bottom" format="dimension" />
+        <attr name="showInitAnimation" format="boolean" />
+    </declare-styleable>
+
+    <!-- ExpandIconView-->
+    <declare-styleable name="ExpandIconView">
+        <attr name="eiv_roundedCorners" format="boolean"/>
+        <attr name="eiv_switchColor" format="boolean"/>
+        <attr name="eiv_color" format="color"/>
+        <attr name="eiv_colorMore" format="color"/>
+        <attr name="eiv_colorLess" format="color"/>
+        <attr name="eiv_colorIntermediate" format="color"/>
+        <attr name="eiv_animationDuration" format="integer"/>
+        <attr name="eiv_padding" format="dimension"/>
+    </declare-styleable>
+
+    <!-- ExpandableLayout-->
+    <declare-styleable name="ExpandableLayout">
+        <attr name="parentLayout" format="integer" />
+        <attr name="childLayout" format="integer" />
+    </declare-styleable>
+
+
+    <declare-styleable name="day">
+        <attr name="state_current" format="boolean" />
+    </declare-styleable>
+
+    <attr name="calendarViewStyle" format="reference" />
+
+    <!--slidecode-->
+    <declare-styleable name="SwipeCaptchaView">
+        <attr name="captchaWidth" format="dimension"/>
+        <attr name="captchaHeight" format="dimension"/>
+        <attr name="matchDeviation" format="dimension"/>
+    </declare-styleable>
+
+
+
+
+
+
+</resources>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    card_view:cardCornerRadius="6dp"
+    card_view:cardElevation="6dp"
+    card_view:cardUseCompatPadding="true">
+    <ImageView
+        android:id="@+id/iv_menu_card"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_gravity="center" />
+
+    <TextView
+        android:id="@+id/card_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+       android:layout_marginLeft="45dp"
+        android:shadowColor="@android:color/black"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="2"
+        android:textColor="@color/app_color"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:text="申请联络"
+      />
+
+    <TextView
+        android:id="@+id/tv_data"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:layout_marginLeft="45dp"
+        android:text="日期：2017年10月12日"
+        />
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="55dp"
+            android:layout_marginLeft="45dp"
+            android:text="时间：12:45"
+            />
+
+    <TextView
+        android:id="@+id/tv_start_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="75dp"
+        android:layout_marginLeft="45dp"
+        android:singleLine="true"
+        android:layout_marginRight="80dp"
+        android:text="起点：深圳市南山区学府路2号"
+        />
+    <TextView
+        android:id="@+id/tv_end_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:layout_marginLeft="45dp"
+        android:singleLine="true"
+        android:layout_marginRight="80dp"
+        android:text="终点：东莞市樟木头镇南街8号"
+        />
+
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right|center_vertical"
+        android:layout_marginRight="10dp">
+
+        <ImageView
+            android:id="@+id/iv_item_card"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+           />
+    </FrameLayout>
+</android.support.v7.widget.CardView>
